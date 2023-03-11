@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import { dataContext } from './context/dataContext';
 import useLocalStorage from './hooks/useLocalStorage';
 import originData from './data';
@@ -29,7 +29,7 @@ function App() {
   return (
     <div className='App'>
       <dataContext.Provider value={{ data, setData }}>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route element={<Layout />}>
               <Route
@@ -43,7 +43,7 @@ function App() {
                 element={<Error />}></Route>
             </Route>
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </dataContext.Provider>
     </div>
   );
