@@ -88,14 +88,16 @@ const Detail = () => {
               className='mr-1'></TbChevronLeft>
             Zpět na seznam
           </Link>
-          <Link
-            to={`/detail/${checklistItem.id + 1}`}
-            className='flex items-center mt-12 no-underline'>
-            Další bod
-            <TbChevronRight
-              size={16}
-              className='ml-1'></TbChevronRight>
-          </Link>
+          {storageData.length > checklistItem.id && (
+            <Link
+              to={`/detail/${checklistItem.id + 1}`}
+              className='flex items-center mt-12 no-underline'>
+              Další bod
+              <TbChevronRight
+                size={16}
+                className='ml-1'></TbChevronRight>
+            </Link>
+          )}
         </div>
       </Card>
     </>
