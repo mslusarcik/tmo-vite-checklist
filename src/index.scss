@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap');
 
 * {
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -23,7 +23,6 @@ body {
 main {
   display: flex;
   justify-content: center;
-  align-items: center;
   padding: 4rem 0;
   min-height: calc(100vh - 8rem);
 }
@@ -74,9 +73,13 @@ h6,
 
 h1,
 .h1 {
-  font-size: 2rem;
-  line-height: 2.25rem;
+  font-size: 1.75rem;
+  line-height: 2rem;
   margin-bottom: 1rem;
+  @screen md {
+    font-size: 2rem;
+    line-height: 2.25rem;
+  }
 }
 
 h2,

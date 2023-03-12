@@ -6,7 +6,7 @@ const Card = ({ size, children }) => {
 
   return (
     <div className='container mx-auto px-4 card'>
-      <div className={`block w-full size-${cardSize} mx-auto p-8 bg-white rounded-md shadow-lg`}>
+      <div className={`block w-full size-${cardSize} mx-auto p-4 lg:p-8 bg-white rounded-md shadow-lg`}>
         {children}
       </div>
     </div>

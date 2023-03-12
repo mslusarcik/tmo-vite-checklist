@@ -37,48 +37,46 @@ const Detail = () => {
   return (
     <>
       <Card size='lg'>
-        <Link
-          to='/'
-          className='flex items-center mb-4 no-underline'>
-          <TbChevronLeft
-            size={16}
-            className='mr-1'></TbChevronLeft>
-          Zpět
-        </Link>
-        <h1 className='mt-0 mb-6 pb-2 flex items-center justify-between border-b'>
-          <span className='flex items-center'>
+        <h1 className='mt-0 mb-6 pb-4 lg:pb-2 flex items-end lg:items-center justify-between border-b'>
+          <span className='flex items-center mr-6'>
             <img
               src={logo}
               alt='Logo T-Mobile'
-              className='mr-8 w-[24px] py-4'
+              className='mr-8 w-[24px] py-4 hidden lg:block'
             />
             {checklistItem.title}
           </span>
           <SetCompleted id={checklistItem.id}>
             {checklistItem.isCompleted ? (
-              <span className='text-sm px-4 py-2 bg-green-100 text-green-600 rounded-8 cursor-pointer'>
+              <span className='block whitespace-nowrap text-sm px-4 py-2 bg-green-100 text-green-600 rounded-8 cursor-pointer'>
                 Done
               </span>
             ) : (
-              <span className='text-sm px-4 py-2 bg-yellow-100 text-yellow-600 rounded-8 cursor-pointer'>
+              <span className='block whitespace-nowrap text-sm px-4 py-2 bg-yellow-100 text-yellow-600 rounded-8 cursor-pointer'>
                 To do
               </span>
             )}
           </SetCompleted>
         </h1>
-        <div className='p-4 mb-8 bg-blue-100 text-blue-500 rounded-lg flex items-center max-w-[85%]'>
-          <TbExclamationCircle className='mr-2'></TbExclamationCircle>
+        <div className='p-3 lg:p-4 mb-8 bg-blue-100 text-blue-500 rounded-lg flex items-center lg:max-w-[85%]'>
+          <TbExclamationCircle className='mr-2 shrink-0'></TbExclamationCircle>
           <div className='content text-sm'>
-            Nevíte si rady nebo stránku optimalizujete poprvé? Zavolejte mi na{' '}
-            <a href='mailto:miroslav.slusarcik@external.t-mobile.cz'>
-              miroslav.slusarcik@external.t-mobile.cz
-            </a>{' '}
-            nebo číslo <a href='tel:miroslav.slusarcik@external.t-mobile.cz'>731 326 653</a>.
+            Nevíte si rady nebo stránku optimalizujete poprvé? Napište mi na{' '}
+            <a href='mailto:miroslav.slusarcik@external.t-mobile.cz'>e-mail</a> nebo mi{' '}
+            <a href='tel:miroslav.slusarcik@external.t-mobile.cz'>zavolejte</a>.
           </div>
         </div>
-        <div className='content-holder max-w-[85%]'>
+        <div className='content-holder lg:max-w-[85%]'>
           <Markdown>{content}</Markdown>
         </div>
+        <Link
+          to='/'
+          className='flex items-center mt-4 no-underline'>
+          <TbChevronLeft
+            size={16}
+            className='mr-1'></TbChevronLeft>
+          Zpět
+        </Link>
       </Card>
     </>
   );
