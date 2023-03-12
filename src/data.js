@@ -26,19 +26,19 @@ const data = [
   {
     id: 5,
     title: 'Nastavení keyword tagu',
-    contentFileName: 'Popis tasku cislo 3',
+    contentFileName: 'seo_keywords',
     isCompleted: false,
   },
   {
     id: 6,
-    title: 'Nastavení OG tagů pro sociální sítě',
-    contentFileName: 'Popis tasku cislo 4',
+    title: 'Nastavení indexace',
+    contentFileName: 'seo_index',
     isCompleted: false,
   },
   {
     id: 7,
-    title: 'Nastavení indexace',
-    contentFileName: 'Popis tasku cislo 4',
+    title: 'Nastavení OG tagů pro sociální sítě',
+    contentFileName: 'og_tags',
     isCompleted: false,
   },
 ];

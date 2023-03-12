@@ -9,3 +9,13 @@ Měl by obsahovat **maximálně 60 znaků**. Jak bude titulek vypadat si můžet
 Titulek se pak propisuje na stránce vyhledávače, v interním vyhledávači a v záložce v prohlížeči.
 
 ![](images/screenshot_title.png)
+
+## Kde se titulek nastavuje?
+
+### Liferay
+
+V administraci stránky pod záložkou "SEO". Pokud není vyplněný titulek, použije se na něj automaticky název stránky.
+
+### OneShop
+
+OneShop funguje na technologii tzv. slugů. Tedy každá stránka má k sobě přidružený slug, který má v sobě nastavení url a meta tagů. Jakmile stránku odpublikujete, můžete po kliknutí na tlačítko "edit" změnit titulek. Stejně jako u Liferay, pokud není titulek k dispozici, použije se název slugu.
