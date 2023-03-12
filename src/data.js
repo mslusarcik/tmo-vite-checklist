@@ -20,7 +20,7 @@ const data = [
   {
     id: 4,
     title: 'Nastavení meta popisku',
-    contentFileName: 'Popis tasku cislo 3',
+    contentFileName: 'seo_description',
     isCompleted: false,
   },
   {
