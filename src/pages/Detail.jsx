@@ -73,7 +73,7 @@ const Detail = () => {
           <div className='content text-sm'>
             Nevíte si rady nebo stránku optimalizujete poprvé? Napište mi na{' '}
             <a href='mailto:miroslav.slusarcik@external.t-mobile.cz'>e-mail</a> nebo mi{' '}
-            <a href='tel:miroslav.slusarcik@external.t-mobile.cz'>zavolejte</a>.
+            <a href='tel:731326653'>zavolejte</a>.
           </div>
         </div>
         <div className='content-holder lg:max-w-[85%]'>
