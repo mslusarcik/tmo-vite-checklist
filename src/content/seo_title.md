@@ -8,4 +8,4 @@ Měl by obsahovat cca 60 znaků. Jak bude titulek vypadat si můžete vyzkoušet
 
 Titulek se pak propisuje na stránce vyhledávače, v interním vyhledávači a v záložce v prohlížeči.
 
-![](/public/images/screenshot_title.png)
+![](images/screenshot_title.png)

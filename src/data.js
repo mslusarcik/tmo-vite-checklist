@@ -7,7 +7,7 @@ const data = [
   },
   {
     id: 2,
-    title: 'Doplnění klíčového slova do obsahu',
+    title: 'Doplnění klíčových slov do obsahu',
     contentFileName: 'kw_content',
     isCompleted: false,
   },
