@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext, useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import Card from '../components/Card';
 import SetCompleted from '../components/SetCompleted';
 import { dataContext } from '../context/dataContext';
@@ -13,8 +13,10 @@ import './Detail.scss';
 const Detail = () => {
   const [content, setContent] = useState('');
   const { checklistId } = useParams();
+  const navigate = useNavigate();
   const { data } = useContext(dataContext);
-  const [storageData, setStorageData] = useLocalStorage('msData', '[]');
+  const [storageData] = useLocalStorage('msData', '[]');
+
   let checklistItem = null;
 
   if (data !== null) {
@@ -23,12 +25,11 @@ const Detail = () => {
     });
   } else if (storageData !== null || storageData.length > 0) {
     console.log('Data does exist in storage');
-    console.log(storageData);
     checklistItem = storageData.find((item) => {
       return item.id === parseInt(checklistId);
     });
   } else {
-    window.location.replace('/');
+    navigate('/');
   }
 
   useEffect(() => {
@@ -82,21 +83,35 @@ const Detail = () => {
         <div className='flex justify-between'>
           <Link
             to='/'
-            className='flex items-center mt-12 no-underline'>
+            className='flex items-center mt-12 no-underline text-sm lg:text-md'>
             <TbChevronLeft
               size={16}
               className='mr-1'></TbChevronLeft>
             Zpět na seznam
           </Link>
           {storageData.length > checklistItem.id && (
-            <Link
-              to={`/detail/${checklistItem.id + 1}`}
-              className='flex items-center mt-12 no-underline'>
-              Další bod
+            <div className='flex items-center mt-12 no-underline text-sm lg:text-md'>
+              {checklistItem.isCompleted ? (
+                <Link
+                  to={`/detail/${checklistItem.id + 1}`}
+                  className='no-underline'>
+                  Další bod
+                </Link>
+              ) : (
+                <SetCompleted
+                  id={checklistItem.id}
+                  className='cursor-pointer'>
+                  <Link
+                    to={`/detail/${checklistItem.id + 1}`}
+                    className='no-underline'>
+                    Hotovo, pokračovat
+                  </Link>
+                </SetCompleted>
+              )}
               <TbChevronRight
                 size={16}
                 className='ml-1'></TbChevronRight>
-            </Link>
+            </div>
           )}
         </div>
       </Card>

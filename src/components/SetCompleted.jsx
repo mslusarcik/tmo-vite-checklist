@@ -1,13 +1,10 @@
-import React from 'react';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { dataContext } from '../context/dataContext';
 
-const SetCompleted = ({ id, children }) => {
+const SetCompleted = ({ id, className, children }) => {
   const { data, setData } = useContext(dataContext);
 
   const handleCompleted = (e) => {
-    e.preventDefault();
-
     const updatedData = data.map((item) => {
       if (item.id === id) item.isCompleted = !item.isCompleted;
       return item;
@@ -15,9 +12,10 @@ const SetCompleted = ({ id, children }) => {
 
     setData(updatedData);
   };
+
   return (
     <div
-      className='btn-completed'
+      className={`btn-completed ${className}`}
       onClick={(e) => {
         handleCompleted(e);
       }}>
