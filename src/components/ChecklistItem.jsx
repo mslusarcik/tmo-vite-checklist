@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FaChevronRight, FaCheckSquare, FaSquare } from 'react-icons/fa';
 import './ChecklistItem.scss';
@@ -33,7 +32,7 @@ const ChecklistItem = ({ id, title, checked }) => {
         <Link
           to={`/detail/${id}`}
           className='no-underline'>
-          <h2 className='cursor-pointer mr-6 mb-0'>{title || 'Title is empty'}</h2>
+          <h2 className='cursor-pointer mr-6 !mb-0'>{title || 'Title is empty'}</h2>
         </Link>
         <Link
           to={`/detail/${id}`}

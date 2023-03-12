@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import Card from '../components/Card';
 import SetCompleted from '../components/SetCompleted';
 import { dataContext } from '../context/dataContext';
+import useLocalStorage from '../hooks/useLocalStorage';
 import Markdown from 'markdown-to-jsx';
 import logo from '../assets/logo.svg';
 import { TbChevronLeft, TbExclamationCircle } from 'react-icons/tb';
@@ -12,11 +13,18 @@ import './Detail.scss';
 const Detail = () => {
   const [content, setContent] = useState('');
   const { checklistId } = useParams();
-  const { data, setData } = useContext(dataContext);
+  const { data } = useContext(dataContext);
+  const [storageData, setStorageData] = useLocalStorage('msData', '[]');
   let checklistItem = null;
 
   if (data !== null) {
     checklistItem = data.find((item) => {
+      return item.id === parseInt(checklistId);
+    });
+  } else if (storageData !== null || storageData.length > 0) {
+    console.log('Data does exist in storage');
+    console.log(storageData);
+    checklistItem = storageData.find((item) => {
       return item.id === parseInt(checklistId);
     });
   } else {
@@ -39,11 +47,13 @@ const Detail = () => {
       <Card size='lg'>
         <h1 className='mt-0 mb-6 pb-4 lg:pb-2 flex items-end lg:items-center justify-between border-b'>
           <span className='flex items-center mr-6'>
-            <img
-              src={logo}
-              alt='Logo T-Mobile'
-              className='mr-8 w-[24px] py-4 hidden lg:block'
-            />
+            <Link to={'/'}>
+              <img
+                src={logo}
+                alt='Logo T-Mobile'
+                className='mr-8 w-[24px] py-4 hidden lg:block'
+              />
+            </Link>
             {checklistItem.title}
           </span>
           <SetCompleted id={checklistItem.id}>
