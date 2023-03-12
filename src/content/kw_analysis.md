@@ -1,14 +1,18 @@
 ## Proč analýza?
 
-Analýza klíčových slov pomáhá zajistit, aby se stránky objevily na výsledcích vyhledávačů (interních i externích). Klíčová slova jsou slova nebo fráze, které nejlépe popisují téma na vaší stránce a jsou použity ve vašem obsahu, titulcích, popiscích a meta popiscích.
+Analýza klíčových slov pomáhá zajistit, aby se stránky objevily na výsledcích vyhledávačů (interních i externích). Klíčová slova jsou slova nebo fráze, které nejlépe popisují téma na vaší stránce a jsou použity ve vašem obsahu, titulcích, popiscích, url adrese a meta popiscích.
 
-Například: "Neomezené mobilní tarify"
+**Každá stránka by měla cílit na jedno hlavní klíčové slovo** a následně obsahovat pár sekundárních klíčových slov ukrytých v textu.
+
+**Hlavní**: "Neomezené mobilní tarify"
+
+**Sekundární**: "Mobilní tarify, neomezený tarif, paušál, tarif neomezená data..."
 
 ## Jak na to?
 
 V našem případě máme výhodu, že většinou nahrazujeme existující stránku novým designem. Díky tomu můžeme nakouknou pod pokličku analytiky, která nám ukáže na jaká klíčová slova se stránka ve vyhledávání zobrazuje a případně v jakých pozicích.
 
-Snadno tak můžeme po úpravě sledovat, jestli naše úpravy (ať už designové nebo textové) pomohly ke zlepšení.
+Snadno tak můžeme sledovat, jestli naše úpravy (ať už designové nebo textové) pomohly ke zlepšení.
 
 **Relevantní data najdeme v...**
 
@@ -24,4 +28,4 @@ Pokud je pro nás fráze relevantní, **sekundárně nás může zajímat tzv. "
 
 V praxi platí, že **čím obecnější je vyhledávaná fráze, tím složítější je se mezi konkurencí prosadit**.
 
-Např. slovo "internet" je velmi konkurenční a zároveň nerelevantní, protože pod ním nebudou lidé vyhledávat konkrétní produkt. Ale delší klíčové slovo "Neomezený internet na doma" už pro nás může být velmi zajímavé, protože návštěva může vést ke konverzi.
+Např. slovo "internet" je velmi konkurenční a zároveň nerelevantní, protože pod ním nebudou lidé vyhledávat konkrétní produkt. Ale delší klíčové slovo "Neomezený internet na doma" už pro nás může být velmi zajímavé, protože i přes nižší vyhledávání může přivést objednávky.

@@ -81,7 +81,7 @@ const Detail = () => {
         </div>
         <Link
           to='/'
-          className='flex items-center mt-4 no-underline'>
+          className='flex items-center mt-12 no-underline'>
           <TbChevronLeft
             size={16}
             className='mr-1'></TbChevronLeft>

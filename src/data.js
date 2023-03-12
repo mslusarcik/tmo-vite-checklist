@@ -8,13 +8,13 @@ const data = [
   {
     id: 2,
     title: 'Doplnění klíčového slova do obsahu',
-    contentFileName: 'Popis tasku cislo 2',
+    contentFileName: 'kw_content',
     isCompleted: false,
   },
   {
     id: 3,
     title: 'Nastavení titulku',
-    contentFileName: 'Popis tasku cislo 3',
+    contentFileName: 'seo_title',
     isCompleted: false,
   },
   {
@@ -32,6 +32,12 @@ const data = [
   {
     id: 6,
     title: 'Nastavení OG tagů pro sociální sítě',
+    contentFileName: 'Popis tasku cislo 4',
+    isCompleted: false,
+  },
+  {
+    id: 7,
+    title: 'Nastavení indexace',
     contentFileName: 'Popis tasku cislo 4',
     isCompleted: false,
   },
