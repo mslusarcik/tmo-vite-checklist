@@ -7,7 +7,7 @@ import { dataContext } from '../context/dataContext';
 import useLocalStorage from '../hooks/useLocalStorage';
 import Markdown from 'markdown-to-jsx';
 import logo from '../assets/logo.svg';
-import { TbChevronLeft, TbExclamationCircle } from 'react-icons/tb';
+import { TbChevronLeft, TbExclamationCircle, TbChevronRight } from 'react-icons/tb';
 import './Detail.scss';
 
 const Detail = () => {
@@ -79,14 +79,24 @@ const Detail = () => {
         <div className='content-holder lg:max-w-[85%]'>
           <Markdown>{content}</Markdown>
         </div>
-        <Link
-          to='/'
-          className='flex items-center mt-12 no-underline'>
-          <TbChevronLeft
-            size={16}
-            className='mr-1'></TbChevronLeft>
-          Zpět
-        </Link>
+        <div className='flex justify-between'>
+          <Link
+            to='/'
+            className='flex items-center mt-12 no-underline'>
+            <TbChevronLeft
+              size={16}
+              className='mr-1'></TbChevronLeft>
+            Zpět na seznam
+          </Link>
+          <Link
+            to={`/detail/${checklistItem.id + 1}`}
+            className='flex items-center mt-12 no-underline'>
+            Další bod
+            <TbChevronRight
+              size={16}
+              className='ml-1'></TbChevronRight>
+          </Link>
+        </div>
       </Card>
     </>
   );
