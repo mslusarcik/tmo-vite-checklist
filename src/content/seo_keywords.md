@@ -8,7 +8,7 @@ Neexistuje žádný oficiální limit, nicméně bych nepřekračoval 10 klíčo
 
 Toto nastavení není nikde viditelné a vidí ho pouze vyhledávací roboti.
 
-![](images/screenshot_description.png)
+![](/images/screenshot_description.png)
 
 ## Kde se klíčová slova nastavují?
 

@@ -10,7 +10,7 @@ Měl by obsahovat **maximálně 160 znaků**. Jak bude vypadat popisek společn�
 
 Popisek se pak propisuje na stránce vyhledávače a v interním vyhledávači.
 
-![](images/screenshot_description.png)
+![](/images/screenshot_description.png)
 
 ## Kde se popisek nastavuje?
 
