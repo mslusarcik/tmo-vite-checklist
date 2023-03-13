@@ -7,7 +7,7 @@ import { dataContext } from '../context/dataContext';
 import useLocalStorage from '../hooks/useLocalStorage';
 import Markdown from 'markdown-to-jsx';
 import logo from '../assets/logo.svg';
-import { TbChevronLeft, TbExclamationCircle, TbChevronRight } from 'react-icons/tb';
+import { TbChevronLeft, TbExclamationCircle, TbChevronRight, TbLoader2 } from 'react-icons/tb';
 import './Detail.scss';
 
 const Detail = () => {
@@ -79,7 +79,13 @@ const Detail = () => {
           </div>
         </div>
         <div className='content-holder lg:max-w-[85%]'>
-          <Markdown>{content}</Markdown>
+          {content ? (
+            <Markdown>{content}</Markdown>
+          ) : (
+            <TbLoader2
+              size={24}
+              className='text-magenta loader'></TbLoader2>
+          )}
         </div>
         <div className='flex justify-between'>
           <Link
