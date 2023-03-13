@@ -30,12 +30,12 @@ const ChecklistItem = ({ id, title, checked }) => {
       </SetCompleted>
       <div className='content flex justify-between items-center w-full'>
         <Link
-          to={`/detail/${id}`}
+          to={import.meta.env.BASE_URL + `detail/${id}`}
           className='no-underline'>
           <h2 className='cursor-pointer mr-6 !mb-0'>{title || 'Title is empty'}</h2>
         </Link>
         <Link
-          to={`/detail/${id}`}
+          to={import.meta.env.BASE_URL + `detail/${id}`}
           className='no-underline whitespace-nowrap text-xs lg:text-sm'>
           Detail{' '}
           <FaChevronRight

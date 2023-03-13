@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext, useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Card from '../components/Card';
 import SetCompleted from '../components/SetCompleted';
 import { dataContext } from '../context/dataContext';
@@ -13,24 +13,24 @@ import './Detail.scss';
 const Detail = () => {
   const [content, setContent] = useState('');
   const { checklistId } = useParams();
-  const navigate = useNavigate();
   const { data } = useContext(dataContext);
   const [storageData] = useLocalStorage('msData', '[]');
 
-  let checklistItem = null;
+  const handleChecklistItem = () => {
+    if (data !== null) {
+      return data.find((item) => {
+        return item.id === parseInt(checklistId);
+      });
+    } else if (storageData !== null || storageData.length > 0) {
+      return storageData.find((item) => {
+        return item.id === parseInt(checklistId);
+      });
+    } else {
+      console.log('Error happend');
+    }
+  };
 
-  if (data !== null) {
-    checklistItem = data.find((item) => {
-      return item.id === parseInt(checklistId);
-    });
-  } else if (storageData !== null || storageData.length > 0) {
-    console.log('Data does exist in storage');
-    checklistItem = storageData.find((item) => {
-      return item.id === parseInt(checklistId);
-    });
-  } else {
-    navigate('/');
-  }
+  const checklistItem = handleChecklistItem();
 
   useEffect(() => {
     import(`../content/${checklistItem.contentFileName}.md`)
@@ -41,14 +41,14 @@ const Detail = () => {
           .catch((err) => setContent('Content couldn’t have been loaded.'));
       })
       .catch((err) => setContent('Content couldn’t have been loaded.'));
-  });
+  }, []);
 
   return (
     <>
       <Card size='lg'>
         <h1 className='mt-0 mb-6 pb-4 lg:pb-2 flex items-end lg:items-center justify-between border-b'>
           <span className='flex items-center mr-6'>
-            <Link to={'/'}>
+            <Link to='/'>
               <img
                 src={logo}
                 alt='Logo T-Mobile'
@@ -57,7 +57,7 @@ const Detail = () => {
             </Link>
             {checklistItem.title}
           </span>
-          <SetCompleted id={checklistItem.id}>
+          <SetCompleted id={parseInt(checklistId)}>
             {checklistItem.isCompleted ? (
               <span className='block whitespace-nowrap text-sm px-4 py-2 bg-green-100 text-green-600 rounded-8 cursor-pointer'>
                 Done
@@ -93,19 +93,16 @@ const Detail = () => {
             <div className='flex items-center mt-12 no-underline text-sm lg:text-md'>
               {checklistItem.isCompleted ? (
                 <Link
-                  to={`/detail/${checklistItem.id + 1}`}
+                  to={import.meta.env.BASE_URL + `detail/${parseInt(checklistId) + 1}`}
                   className='no-underline'>
                   Další bod
                 </Link>
               ) : (
                 <SetCompleted
-                  id={checklistItem.id}
+                  id={parseInt(checklistId)}
+                  redirPath={import.meta.env.BASE_URL + `detail/${parseInt(checklistId) + 1}`}
                   className='cursor-pointer'>
-                  <Link
-                    to={`/detail/${checklistItem.id + 1}`}
-                    className='no-underline'>
-                    Hotovo, pokračovat
-                  </Link>
+                  <span>Hotovo, pokračovat</span>
                 </SetCompleted>
               )}
               <TbChevronRight

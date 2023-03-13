@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { dataContext } from './context/dataContext';
 import useLocalStorage from './hooks/useLocalStorage';
 import originData from './data';
@@ -9,41 +9,51 @@ import Detail from './pages/Detail';
 import Error from './pages/Error';
 
 function App() {
-  const [data, setData] = useState(null);
   const [storageData, setStorageData] = useLocalStorage('msData', '[]');
+  const [data, setData] = useState();
 
-  useEffect(() => {
+  if (!data) {
     if (storageData === null || storageData.length < 1) {
-      console.log('Origin data');
+      console.log('Importing data from origin');
       setData(originData);
     } else {
-      console.log('Localstorage data');
+      console.log('Importing data from localStorage');
       setData(JSON.parse(localStorage.getItem('msData')));
     }
-  }, []);
+  }
 
   useEffect(() => {
+    console.log(JSON.stringify(data));
+    console.log(JSON.stringify(storageData));
     setStorageData(data);
   }, [data]);
 
   return (
     <div className='App'>
       <dataContext.Provider value={{ data, setData }}>
-        <HashRouter>
+        <BrowserRouter>
           <Routes>
             <Route element={<Layout />}>
               <Route
-                index
+                path='/'
+                element={
+                  <Navigate
+                    to={import.meta.env.BASE_URL}
+                    replace
+                  />
+                }></Route>
+              <Route
+                path={import.meta.env.BASE_URL}
                 element={<Home />}></Route>
               <Route
-                path={'/detail/:checklistId'}
+                path={import.meta.env.BASE_URL + 'detail/:checklistId'}
                 element={<Detail />}></Route>
               <Route
                 path='*'
                 element={<Error />}></Route>
             </Route>
           </Routes>
-        </HashRouter>
+        </BrowserRouter>
       </dataContext.Provider>
     </div>
   );

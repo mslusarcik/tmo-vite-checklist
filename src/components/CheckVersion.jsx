@@ -15,11 +15,8 @@ const CheckVersion = () => {
   const handleDataRefresh = (e) => {
     e.preventDefault();
     setStorageVersion(currentVersion);
-  };
-
-  useEffect(() => {
     setData(originData);
-  }, [storageVersion]);
+  };
 
   return (
     <>
