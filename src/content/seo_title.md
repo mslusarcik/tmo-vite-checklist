@@ -8,7 +8,7 @@ Měl by obsahovat **maximálně 60 znaků**. Jak bude titulek vypadat si můžet
 
 Titulek se pak propisuje na stránce vyhledávače, v interním vyhledávači a v záložce v prohlížeči.
 
-![](/images/screenshot_title.png)
+![](/tmo-vite-checklist/images/screenshot_title.png)
 
 ## Kde se titulek nastavuje?
 
