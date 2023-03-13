@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext, useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import Card from '../components/Card';
 import SetCompleted from '../components/SetCompleted';
 import { dataContext } from '../context/dataContext';
@@ -15,6 +15,7 @@ const Detail = () => {
   const { checklistId } = useParams();
   const { data } = useContext(dataContext);
   const [storageData] = useLocalStorage('msData', '[]');
+  const navigate = useNavigate();
 
   const handleChecklistItem = () => {
     if (data !== null) {
@@ -102,7 +103,12 @@ const Detail = () => {
                   id={parseInt(checklistId)}
                   redirPath={import.meta.env.BASE_URL + `detail/${parseInt(checklistId) + 1}`}
                   className='cursor-pointer'>
-                  <span>Hotovo, pokračovat</span>
+                  <span
+                    onClick={() =>
+                      navigate(`${import.meta.env.BASE_URL}detail/${parseInt(checklistId) + 1}`)
+                    }>
+                    Hotovo, pokračovat
+                  </span>
                 </SetCompleted>
               )}
               <TbChevronRight
