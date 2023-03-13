@@ -9,9 +9,6 @@ import logo from '../assets/logo.svg';
 const index = () => {
   const { data } = useContext(dataContext);
 
-  console.log('HOME DATA:');
-  console.log(data);
-
   if (data) {
     return (
       <>

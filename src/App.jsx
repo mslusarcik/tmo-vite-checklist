@@ -23,8 +23,6 @@ function App() {
   }
 
   useEffect(() => {
-    console.log(JSON.stringify(data));
-    console.log(JSON.stringify(storageData));
     setStorageData(data);
   }, [data]);
 

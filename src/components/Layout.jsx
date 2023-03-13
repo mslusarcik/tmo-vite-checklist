@@ -5,11 +5,9 @@ const Layout = () => {
   return (
     <>
       <div className='overall-wrapper'>
-        {/* <Header /> */}
         <main>
           <Outlet />
         </main>
-        {/* <Footer /> */}
       </div>
     </>
   );

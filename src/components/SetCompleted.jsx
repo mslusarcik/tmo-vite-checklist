@@ -11,8 +11,6 @@ const SetCompleted = ({ id, className, children }) => {
       return item;
     });
 
-    console.log('SetCompleted component is setting new data:');
-    console.log(updatedData);
     setData(updatedData);
   };
 

@@ -13,7 +13,6 @@ const ResetCompleted = () => {
       return item;
     });
 
-    // console.log(updatedData);
     setData(updatedData);
   };
   return (
