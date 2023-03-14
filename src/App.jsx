@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { dataContext } from './context/dataContext';
 import useLocalStorage from './hooks/useLocalStorage';
 import originData from './data';
@@ -29,19 +29,11 @@ function App() {
   return (
     <div className='App'>
       <dataContext.Provider value={{ data, setData }}>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route element={<Layout />}>
               <Route
-                path='/'
-                element={
-                  <Navigate
-                    to={import.meta.env.BASE_URL}
-                    replace
-                  />
-                }></Route>
-              <Route
-                path={import.meta.env.BASE_URL}
+                index
                 element={<Home />}></Route>
               <Route
                 path={import.meta.env.BASE_URL + 'detail/:checklistId'}
@@ -51,7 +43,7 @@ function App() {
                 element={<Error />}></Route>
             </Route>
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </dataContext.Provider>
     </div>
   );
