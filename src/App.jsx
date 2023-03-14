@@ -36,7 +36,7 @@ function App() {
                 index
                 element={<Home />}></Route>
               <Route
-                path={import.meta.env.BASE_URL + 'detail/:checklistId'}
+                path={'/detail/:checklistId'}
                 element={<Detail />}></Route>
               <Route
                 path='*'

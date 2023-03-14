@@ -100,19 +100,16 @@ const Detail = () => {
             <div className='flex items-center mt-12 no-underline text-sm lg:text-md'>
               {checklistItem.isCompleted ? (
                 <Link
-                  to={import.meta.env.BASE_URL + `detail/${parseInt(checklistId) + 1}`}
+                  to={`/detail/${parseInt(checklistId) + 1}`}
                   className='no-underline'>
                   Další bod
                 </Link>
               ) : (
                 <SetCompleted
                   id={parseInt(checklistId)}
-                  redirPath={import.meta.env.BASE_URL + `detail/${parseInt(checklistId) + 1}`}
+                  redirPath={`/detail/${parseInt(checklistId) + 1}`}
                   className='cursor-pointer'>
-                  <span
-                    onClick={() =>
-                      navigate(`${import.meta.env.BASE_URL}detail/${parseInt(checklistId) + 1}`)
-                    }>
+                  <span onClick={() => navigate(`/detail/${parseInt(checklistId) + 1}`)}>
                     Hotovo, pokračovat
                   </span>
                 </SetCompleted>
