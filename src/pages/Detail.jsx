@@ -7,7 +7,7 @@ import { dataContext } from '../context/dataContext';
 import useLocalStorage from '../hooks/useLocalStorage';
 import Markdown from 'markdown-to-jsx';
 import logo from '../assets/logo.svg';
-import { TbChevronLeft, TbExclamationCircle, TbChevronRight, TbLoader2 } from 'react-icons/tb';
+import { TbChevronLeft, TbExclamationCircle, TbChevronRight, TbLoader2, TbCheck } from 'react-icons/tb';
 import './Detail.scss';
 
 const Detail = () => {
@@ -96,7 +96,7 @@ const Detail = () => {
               className='mr-1'></TbChevronLeft>
             Zpět na seznam
           </Link>
-          {storageData.length > checklistItem.id && (
+          {storageData.length > checklistItem.id ? (
             <div className='flex items-center mt-12 no-underline text-sm lg:text-md'>
               {checklistItem.isCompleted ? (
                 <Link
@@ -118,6 +118,16 @@ const Detail = () => {
                 size={16}
                 className='ml-1'></TbChevronRight>
             </div>
+          ) : (
+            checklistItem.isCompleted || (
+              <SetCompleted
+                id={parseInt(checklistId)}
+                redirPath={`/detail/${parseInt(checklistId) + 1}`}
+                className='cursor-pointer mt-12 flex items-center'>
+                <span className='mr-2'>Označit za hotové</span>
+                <TbCheck></TbCheck>
+              </SetCompleted>
+            )
           )}
         </div>
       </Card>
